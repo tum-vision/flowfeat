@@ -78,7 +78,7 @@ print(y_dec.shape) # decoder features, e.g. (1,128,224,224)
 ```
 
 ## 🧰 Pre-trained Models
-| **Model Name (`name`)** | **Backbone**    | **Dataset**  |  **Feature Dim** | **Checkpoint**                                                                          |
+| **Model Name (`name`)** | **Backbone**    | **Train Dataset**  |  **Feature Dim** | **Checkpoint**                                                                          |
 | :---------------------- | :-------------- | :----------- | :-------------: | :-------------------------------------------------------------------------------------- |
 | `dino_vits16_yt`        | DINO ViT-S/16   | YouTube-VOS  |       128       | [Download](https://cvg.cit.tum.de/webshare/g/papers/flowfeat/dino_s16_flowfeat_yt.pth)  |
 | `dino_vitb16_yt`        | DINO ViT-B/16   | YouTube-VOS  |       128       | [Download](https://cvg.cit.tum.de/webshare/g/papers/flowfeat/dino_b16_flowfeat_yt.pth)  |
