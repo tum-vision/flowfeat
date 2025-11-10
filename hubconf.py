@@ -6,7 +6,7 @@ from model import FlowFeat
 
 
 # Optional: declarative dependencies shown by `torch.hub.help`
-dependencies = ["torch", "numpy", "tqdm", "Pillow"]
+dependencies = ["torch", "numpy", "timm"]
 
 MODEL_CONFIG = {
     "dino_vits16_yt":   {"fdim": 128, "patch_size": 16, "url": "https://cvg.cit.tum.de/webshare/g/papers/flowfeat/dino_s16_flowfeat_yt.pth"},
