@@ -12,7 +12,7 @@ MODEL_CONFIG = {
     "dino_vits16_yt":   {"fdim": 128, "patch_size": 16, "url": "https://cvg.cit.tum.de/webshare/g/papers/flowfeat/dino_s16_flowfeat_yt.pth"},
     "dino_vitb16_yt":   {"fdim": 128, "patch_size": 16, "url": "https://cvg.cit.tum.de/webshare/g/papers/flowfeat/dino_b16_flowfeat_yt.pth"},
     "dino_vitb16_kt":   {"fdim": 128, "patch_size": 16, "url": "https://cvg.cit.tum.de/webshare/g/papers/flowfeat/dino_b16_flowfeat_kt.pth"},
-    "mae_vitb16_kt":    {"fdim": 128, "patch_size": 16, "url": "https://cvg.cit.tum.de/webshare/g/papers/flowfeat/mae_b16_flowfeat_kt.pth"}
+    "mae_vitb16_kt":    {"fdim": 128, "patch_size": 16, "url": "https://cvg.cit.tum.de/webshare/g/papers/flowfeat/mae_b16_flowfeat_kt.pth"},
     "dinov2_vits14_yt": {"fdim": 128, "patch_size": 14, "url": "https://cvg.cit.tum.de/webshare/g/papers/flowfeat/dino2_s14_flowfeat_yt.pth"},
     "dinov2_vitb14_yt": {"fdim": 128, "patch_size": 14, "url": "https://cvg.cit.tum.de/webshare/g/papers/flowfeat/dino2_b14_flowfeat_yt.pth"},
     "dinov2_vitb14_kt": {"fdim": 128, "patch_size": 14, "url": "https://cvg.cit.tum.de/webshare/g/papers/flowfeat/dino2_b14_flowfeat_kt.pth"}
