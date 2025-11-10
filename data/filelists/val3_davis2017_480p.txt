@@ -1,0 +1,8 @@
+davis2017/JPEGImages/480p/bike-packing davis2017/Annotations/480p/bike-packing
+davis2017/JPEGImages/480p/breakdance davis2017/Annotations/480p/breakdance
+davis2017/JPEGImages/480p/car-shadow davis2017/Annotations/480p/car-shadow
+davis2017/JPEGImages/480p/dance-twirl davis2017/Annotations/480p/dance-twirl
+davis2017/JPEGImages/480p/shooting davis2017/Annotations/480p/shooting
+davis2017/JPEGImages/480p/motocross-jump davis2017/Annotations/480p/motocross-jump
+davis2017/JPEGImages/480p/lab-coat davis2017/Annotations/480p/lab-coat
+davis2017/JPEGImages/480p/kite-surf davis2017/Annotations/480p/kite-surf

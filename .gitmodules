@@ -1,0 +1,9 @@
+[submodule "SEA-RAFT"]
+	path = SEARAFT
+	url = https://github.com/princeton-vl/SEA-RAFT.git
+[submodule "SMURF"]
+	path = SMURF
+	url = https://github.com/ChristophReich1996/SMURF.git
+[submodule "RAFT"]
+	path = RAFT
+	url = https://github.com/princeton-vl/RAFT.git

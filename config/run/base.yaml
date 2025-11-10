@@ -1,0 +1,9 @@
+device: "cuda"
+seed: 0
+num_workers: 4
+series: 'baseline'
+tag: '01_test'
+notes: 'message'
+wandb_entity: ''
+wandb_project: ''
+wandb_dir: './runs/wandb'

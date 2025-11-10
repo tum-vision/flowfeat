@@ -1,0 +1,51 @@
+defaults:
+  - run: base
+  - override hydra/hydra_logging: disabled
+  - override hydra/job_logging: disabled
+
+hydra:  
+  output_subdir: null
+  run:  
+    dir: .
+
+run:
+  group: "ytvos"
+  val_every: 10
+  vis_train_every: 50
+  vis_val_every: 50
+data:
+  root: "./data"
+  train_split: "data/filelists/train_ytvos_all"
+  val_split: "data/filelists/val3_davis2017_480p"
+train:
+  crop_size: 256
+  input_size: [224, 224]
+  crop_range: [.5, 0.75]
+  batch_size: 128
+  epochs: 10000
+  opt:
+    lr: 0.0001
+    weight_decay: 0.0
+    betas: [0.9, 0.999]
+    lr_gamma: 0.9
+  timeflip: True
+  temp_win: 2
+  gap: 2
+model:
+  enc_snapshot: "dinov2_vits14" # for MAE models/mae_pretrain_vit_base.pth"
+  dec_snapshot: ""
+  input_size: [224, 224]
+  enc_dim: 768
+  patch_size: 16
+  fdim: 128
+  ridge_alpha: 0.1
+  decoder_momentum: 0.999
+  decoder_update_every: 5
+  flownet: RaftFlow
+  norm_flow: True
+  flow_loss: "l1"
+  edge_loss: "l1norm"
+  flow_beta: 1.0
+  flow_weight: 0.1
+  flow_edge_weight: 1.0
+  flow_edge_sigma: 0.1
