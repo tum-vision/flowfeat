@@ -172,7 +172,7 @@ def visualise_train(frames, crop1, crop2, outs, val=False):
     flow_rgb = F.interpolate(flow_rgb.movedim(-1, 1), frame_input.shape[-2:], mode="nearest")
 
     tflow_rgb = torch.stack([torch.from_numpy(flow_to_image(x.numpy())) \
-                                for x in outs["tflow_0"].detach().cpu()], 0)
+                                for x in outs["t_flow_0"].detach().cpu()], 0)
     tflow_rgb = F.interpolate(tflow_rgb.movedim(-1, 1), frame_input.shape[-2:], mode="nearest")
 
     feats0_rgb = torch.cat([pca_feats(ff) for ff in outs["features"].split(1, 0)], 0)

@@ -610,6 +610,8 @@ class FlowFeatTrain(FlowFeat):
     def __init__(self, cfg):
         super().__init__(cfg)
 
+        self.fdim = cfg.fdim
+
         self.ridge_alpha = cfg.ridge_alpha
         self.input_size = cfg.input_size
 

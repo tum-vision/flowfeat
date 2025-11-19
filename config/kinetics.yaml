@@ -36,7 +36,7 @@ model:
   dec_snapshot: ""
   input_size: [224, 224]
   enc_dim: 768
-  patch_size: 16
+  patch_size: 14
   fdim: 128
   ridge_alpha: 1.0
   decoder_momentum: 0.999
