@@ -1,4 +1,4 @@
-[submodule "SEA-RAFT"]
+[submodule "SEARAFT"]
 	path = SEARAFT
 	url = https://github.com/princeton-vl/SEA-RAFT.git
 [submodule "SMURF"]
