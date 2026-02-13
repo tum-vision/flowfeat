@@ -158,5 +158,5 @@ If you use this code or pretrained models, please cite our paper:
 <hr>
 <sub>
 <b>Acknowledgements:</b>
-This work was supported by the ERC Advanced Grant SIMULACRON and DFG project CR 250/26-1 ``4D-YouTube''. We thank the open-source community for tools such as PyTorch and NumPy that made this work possible.
+This work was supported by the ERC Advanced Grant SIMULACRON and DFG project CR 250/26-1 "4D-YouTube". We thank the open-source community for tools such as PyTorch and NumPy that made this work possible.
 </sub>
