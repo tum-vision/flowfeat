@@ -22,29 +22,43 @@ from util.ema_pytorch import EMA
 #######################################
 import importlib
 
+
 def try_import(module_name, class_path=None, alias=None):
     """
     Try to import a module or class dynamically if its directory exists.
     Returns the imported module/class, or None if not available.
-    
-    Args:
-        module_name (str): Folder or top-level package name, e.g. 'SEA-RAFT'
-        class_path (str): Optional full import path, e.g. 'SEA-RAFT.core.raft.RAFT'
-        alias (str): Optional short alias for printing
-    
-    Example:
-        SEARAFT = try_import("SEA-RAFT", "SEA-RAFT.core.raft.RAFT", alias="SEA-RAFT")
     """
-    module_dir = os.path.join(os.path.dirname(__file__), module_name)
+    base_dir = os.path.dirname(__file__)
+    temp_path = None
+
+    if module_name.startswith("RAFT"):
+        temp_path = os.path.join(base_dir, "RAFT", "core")
+        cleanup_roots = {"raft", "utils", "corr", "update", "extractor"}
+    elif module_name.startswith("SEARAFT"):
+        temp_path = os.path.join(base_dir, "SEARAFT", "core")
+        cleanup_roots = {"raft", "utils", "corr", "update", "extractor"}
+    elif module_name.startswith("SMURF"):
+        temp_path = os.path.join(base_dir, "SMURF")
+        cleanup_roots = set()
+    else:
+        cleanup_roots = set()
+
+    module_dir = os.path.join(base_dir, module_name)
     display_name = alias or module_name
 
     if not os.path.isdir(module_dir):
         print(f"[Warning] {display_name} directory not found. Skipping import.")
         return None
 
+    inserted = False
+    before_modules = set(sys.modules.keys())
+
     try:
+        if temp_path and temp_path not in sys.path:
+            sys.path.insert(0, temp_path)
+            inserted = True
+
         if class_path:
-            # Replace slashes/hyphens for valid Python import
             class_path = class_path.replace("/", ".").replace("-", "_")
             components = class_path.split(".")
             mod = importlib.import_module(".".join(components[:-1]))
@@ -52,9 +66,24 @@ def try_import(module_name, class_path=None, alias=None):
         else:
             mod_name = module_name.replace("-", "_")
             return importlib.import_module(mod_name)
+
     except Exception as e:
         print(f"[Warning] {display_name} import failed: {e}")
         return None
+
+    finally:
+        if inserted:
+            try:
+                sys.path.remove(temp_path)
+            except ValueError:
+                pass
+
+        # Clean up generic module names leaked during temporary import.
+        leaked = set(sys.modules.keys()) - before_modules
+        for mod_name in leaked:
+            root = mod_name.split(".", 1)[0]
+            if root in cleanup_roots:
+                sys.modules.pop(mod_name, None)
 
 # --------------------------------------------------------------------
 # Trying to import
@@ -62,9 +91,6 @@ def try_import(module_name, class_path=None, alias=None):
 # Path to submodule root (e.g., SEARAFT)
 
 # SUBMODULES
-#sys.path.insert(0, os.path.join(os.path.dirname(__file__), "SEARAFT/core"))
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "RAFT/core")) # either RAFT or SEARAFT
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "SMURF"))
 
 # --- RAFT ---
 RAFT = try_import("RAFT", "RAFT.core.raft.RAFT", alias="RAFT")

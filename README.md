@@ -53,7 +53,8 @@ model = torch.hub.load(
     "./flowfeat",              # path to local repo clone
     "flowfeat",
     name="dinov2_vits14_yt",
-    pretrained=True
+    pretrained=True,
+    source='local'
 )
 ```
 
@@ -83,12 +84,12 @@ print(y_dec.shape) # decoder features, e.g. (1,128,224,224)
 | **Model Name (`name`)** | **Backbone**    | **Train Dataset**  |  **Feature Dim** | **Checkpoint**                                                                          |
 | :---------------------- | :-------------- | :----------- | :-------------: | :-------------------------------------------------------------------------------------- |
 | `dino_vits16_yt`        | DINO ViT-S/16   | YouTube-VOS  |       128       | [Download](https://cvg.cit.tum.de/webshare/g/papers/flowfeat/dino_s16_flowfeat_yt.pth)  |
-| `dino_vitb16_yt`        | DINO ViT-B/16   | YouTube-VOS  |       128       | [Download](https://cvg.cit.tum.de/webshare/g/papers/flowfeat/dino_b16_flowfeat_yt.pth)  |
-| `dino_vitb16_kt`        | DINO ViT-B/16   | Kinetics |       128       | [Download](https://cvg.cit.tum.de/webshare/g/papers/flowfeat/dino_b16_flowfeat_kt.pth)  |
-| `mae_vitb16_kt`        | DINO ViT-B/16   | Kinetics |       128       | [Download](https://cvg.cit.tum.de/webshare/g/papers/flowfeat/mae_b16_flowfeat_kt.pth)  |
+| `dino_vitb16_yt`        | DINO ViT-B/16   | YouTube-VOS  |       128       | [Download](https://cvg.cit.tum.de/webshare/g/papers/flowfeat/dino_b16_flowfeat_yt_v2.pth)  |
+| `dino_vitb16_kt`        | DINO ViT-B/16   | Kinetics |       128       | [Download](https://cvg.cit.tum.de/webshare/g/papers/flowfeat/dino_b16_flowfeat_kt_v2.pth)  |
+| `mae_vitb16_kt`        | DINO ViT-B/16   | Kinetics |       128       | [Download](https://cvg.cit.tum.de/webshare/g/papers/flowfeat/mae_b16_flowfeat_kt_v2.pth)  |
 | `dinov2_vits14_yt`      | DINOv2 ViT-S/14 | YouTube-VOS  |       128       | [Download](https://cvg.cit.tum.de/webshare/g/papers/flowfeat/dino2_s14_flowfeat_yt.pth) |
-| `dinov2_vitb14_yt`      | DINOv2 ViT-B/14 | YouTube-VOS  |       128       | [Download](https://cvg.cit.tum.de/webshare/g/papers/flowfeat/dino2_b14_flowfeat_yt.pth) |
-| `dinov2_vitb14_kt`      | DINOv2 ViT-B/14 | Kinetics |       128       | [Download](https://cvg.cit.tum.de/webshare/g/papers/flowfeat/dino2_b14_flowfeat_kt.pth) |
+| `dinov2_vitb14_yt`      | DINOv2 ViT-B/14 | YouTube-VOS  |       128       | [Download](https://cvg.cit.tum.de/webshare/g/papers/flowfeat/dino2_b14_flowfeat_yt_v2.pth) |
+| `dinov2_vitb14_kt`      | DINOv2 ViT-B/14 | Kinetics |       128       | [Download](https://cvg.cit.tum.de/webshare/g/papers/flowfeat/dino2_b14_flowfeat_kt_v2.pth) |
 
 
 > 🔐 Note: Model weights are released under the same license as the codebase. Please cite the paper if you use these in your work.
